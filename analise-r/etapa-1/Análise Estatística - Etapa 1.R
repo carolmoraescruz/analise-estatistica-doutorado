@@ -34,13 +34,13 @@ names(RCTA7_stack) <- c("RCTA", "Formula")
 
 # DataFrame unificado dos dados
 df_7dias <- data.frame(MEA7_stack, RFTA7_stack, RCTA7_stack)
-df_7dias <- SeteDias[, c("Formula", "MEA", "RFTA", "RCTA")]
+df_7dias <- df_7dias[, c("Formula", "MEA", "RFTA", "RCTA")]
 
 
 # ********************************** MANOVA *********************************** #
 
 saida7 <- cbind(df_7dias$MEA, df_7dias$RFTA, df_7dias$RCTA)
-modelo7 <- manova(saida7 ~ Formula, data = SeteDias)
+modelo7 <- manova(saida7 ~ Formula, data = df_7dias)
 summary(modelo7, intercept = TRUE) #teste de Pillai
 
 
@@ -107,13 +107,13 @@ names(RCTA28_stack) <- c("RCTA", "Formula")
 
 # DataFrame unificado dos dados
 df_28dias <- data.frame(MEA28_stack, RFTA28_stack, RCTA28_stack)
-df_28dias <- V8Dias[, c("Formula", "MEA", "RFTA", "RCTA")] 
+df_28dias <- df_28dias[, c("Formula", "MEA", "RFTA", "RCTA")] 
 
 
 # ********************************** MANOVA *********************************** #
 
 saida28 <- cbind(df_28dias$MEA, df_28dias$RFTA, df_28dias$RCTA)
-modelo28 <- manova(saida28 ~ Formula, data = V8Dias)
+modelo28 <- manova(saida28 ~ Formula, data = df_28dias)
 summary(modelo28, intercept = TRUE) #teste de Pillai
 
 
@@ -180,13 +180,13 @@ names(RCTA91_stack) <- c("RCTA", "Formula")
 
 # DataFrame unificado dos dados
 df_91dias <- data.frame(MEA91_stack, RFTA91_stack, RCTA91_stack)
-df_91dias <- N1Dias[, c("Formula", "MEA", "RFTA", "RCTA")]
+df_91dias <- df_91dias[, c("Formula", "MEA", "RFTA", "RCTA")]
 
 
 # ********************************** MANOVA *********************************** #
 
 saida91 <- cbind(df_91dias$MEA, df_91dias$RFTA, df_91dias$RCTA)
-modelo91 <- manova(saida91 ~ Formula, data = N1Dias)
+modelo91 <- manova(saida91 ~ Formula, data = df_91dias)
 summary(modelo91, intercept = TRUE) #teste de Pillai
 
 
